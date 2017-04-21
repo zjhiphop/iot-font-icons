@@ -2,7 +2,7 @@ IOT Font ICONS
 =====================
 
 ```
-	Build Vue ICON Fonts Components from Sktech in the fly.
+	Build Vue ICON Fonts Components from Sktech in the fly targets IOT development.
 ```
 
 ### Build Web Font ICON
