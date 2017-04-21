@@ -11,7 +11,7 @@ const bs = require('browser-sync').create()
 const fontName = 'symbols' // set name of your symbol font
 const className = 's' // set class name in your CSS
 const template = 'fontawesome-style' // or 'foundation-style'
-const skethcFileName = 'assets/sketch/symbol-font-14px.sketch' // or 'symbol-font-16px.sketch'
+const skethcFileName = 'assets/sketch/smart-house-icon-set.sketch' // or 'symbol-font-16px.sketch'
 
 /**
  * Recommended to get consistent builds when watching files
@@ -19,44 +19,60 @@ const skethcFileName = 'assets/sketch/symbol-font-14px.sketch' // or 'symbol-fon
  */
 const timestamp = Math.round(Date.now() / 1000)
 
-
-gulp.task('symbols', () =>
+gulp.task('svg', ()=> {
   gulp.src(skethcFileName)
     .pipe(sketch({
-      export: 'artboards',
+      export: 'slices',
       formats: 'svg'
     }))
-    .pipe(iconfont({
-      fontName,
-      formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
-      timestamp,
-      log: () => {} // suppress unnecessary logging
-    }))
-    .on('glyphs', (glyphs) => {
-      const options = {
-        className,
-        fontName,
-        fontPath: '../fonts/', // set path to font (from your CSS file if relative)
-        glyphs: glyphs.map(mapGlyphs)
-      }
-      gulp.src(`templates/${template}.css`)
-        .pipe(consolidate('lodash', options))
-        .pipe(rename({ basename: fontName }))
-        .pipe(gulp.dest('dist/css/')) // set path to export your CSS
+    .pipe(gulp.dest('./assets/svg/'));
+});
 
-      // if you don't need sample.html, remove next 4 lines
-      gulp.src(`templates/${template}.html`)
-        .pipe(consolidate('lodash', options))
-        .pipe(rename({ basename: 'sample' }))
-        .pipe(gulp.dest('dist/')) // set path to export your sample HTML
-    })
-    .pipe(gulp.dest('dist/fonts/')) // set path to export your fonts
-)
+let build = (exportType) => {
+  gulp.src(skethcFileName)
+      .pipe(sketch({
+        export: exportType || 'artboards',
+        formats: 'svg'
+      }))
+      .pipe(iconfont({
+        fontName,
+        formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
+        timestamp,
+        log: () => {} // suppress unnecessary logging
+      }))
+      .on('glyphs', (glyphs) => {
+        const options = {
+          className,
+          fontName,
+          fontPath: '../fonts/', // set path to font (from your CSS file if relative)
+          glyphs: glyphs.map(mapGlyphs)
+        }
+        gulp.src(`templates/${template}.css`)
+          .pipe(consolidate('lodash', options))
+          .pipe(rename({ basename: fontName }))
+          .pipe(gulp.dest('dist/web/css/')) // set path to export your CSS
+
+        // if you don't need sample.html, remove next 4 lines
+        gulp.src(`templates/${template}.html`)
+          .pipe(consolidate('lodash', options))
+          .pipe(rename({ basename: 'sample' }))
+          .pipe(gulp.dest('dist/web/')) // set path to export your sample HTML
+      })
+      .pipe(gulp.dest('dist/web/fonts/')) // set path to export your fonts
+}
+
+gulp.task('symbols', () =>{
+  build('artboards');
+})
+
+gulp.task('slice-symbols', () =>{
+  build('slices');
+})
 
 gulp.task('watch', ['symbols'], () => {
   bs.init({
-    files: 'dist/sample.html',
-    server: 'dist/',
+    files: 'dist/web/sample.html',
+    server: 'dist/web/',
     startPath: '/sample.html',
     middleware: cacheControl
   })

@@ -14,8 +14,13 @@ var base = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015']
+          }
+        }
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -54,7 +59,8 @@ var demo = merge(base, {
   output: {
     path: path.resolve(__dirname, './demo'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    libraryTarget: 'umd'
   }
 })
 
