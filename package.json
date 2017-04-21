@@ -1,10 +1,10 @@
 {
-  "name": "vue-iot-fonts",
+  "name": "iot-font-icons",
   "version": "0.1.0",
-  "homepage": "https://coding.net/u/zjhiphop/p/cloudtea-iot-fonticon/git",
+  "homepage": "https://github.com/zjhiphop/iot-font-icons",
   "repository": {
     "type": "git",
-    "url": "https://coding.net/u/zjhiphop/p/cloudtea-iot-fonticon/git"
+    "url": "https://github.com/zjhiphop/iot-font-icons"
   },
   "main": "dist/vue-icon-fonts.js",
   "description": "Build Vue ICON Fonts Components from Sktech file in the fly.",
