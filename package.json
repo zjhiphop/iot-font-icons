@@ -7,7 +7,7 @@
     "url": "https://github.com/zjhiphop/iot-font-icons"
   },
   "main": "dist/vue-icon-fonts.js",
-  "description": "Build Vue ICON Fonts Components from Sktech file in the fly.",
+  "description": "Build Vue ICON Fonts Components from Sktech in the fly targets IOT development.",
   "scripts": {
     "start": "gulp watch",
     "symbols": "gulp symbols",
