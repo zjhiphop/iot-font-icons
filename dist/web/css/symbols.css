@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "symbols";
+  src: url('../fonts/symbols.eot');
+  src: url('../fonts/symbols.eot?#iefix') format('eot'),
+    url('../fonts/symbols.woff2') format('woff2'),
+    url('../fonts/symbols.woff') format('woff'),
+    url('../fonts/symbols.ttf') format('truetype'),
+    url('../fonts/symbols.svg#symbols') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.s:before {
+  display: inline-block;
+  font-family: "symbols";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.s-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.s-2x { font-size: 2em; }
+.s-3x { font-size: 3em; }
+.s-4x { font-size: 4em; }
+.s-5x { font-size: 5em; }
+.s-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.s-fa-iot-air-cond-in:before { content: "\EA01" }
+.s-fa-iot-air-cond-out:before { content: "\EA02" }
+.s-fa-iot-alarm:before { content: "\EA03" }
+.s-fa-iot-bulb:before { content: "\EA04" }
+.s-fa-iot-cold:before { content: "\EA05" }
+.s-fa-iot-dome-camera:before { content: "\EA06" }
+.s-fa-iot-door-handle:before { content: "\EA07" }
+.s-fa-iot-doorbell:before { content: "\EA08" }
+.s-fa-iot-drop:before { content: "\EA09" }
+.s-fa-iot-eye:before { content: "\EA0A" }
+.s-fa-iot-garage:before { content: "\EA0B" }
+.s-fa-iot-heater:before { content: "\EA0C" }
+.s-fa-iot-houseplant:before { content: "\EA0D" }
+.s-fa-iot-ip-camera:before { content: "\EA0E" }
+.s-fa-iot-key:before { content: "\EA0F" }
+.s-fa-iot-lock-a:before { content: "\EA10" }
+.s-fa-iot-lock-b:before { content: "\EA11" }
+.s-fa-iot-loudspeakers:before { content: "\EA12" }
+.s-fa-iot-pet:before { content: "\EA13" }
+.s-fa-iot-plug:before { content: "\EA14" }
+.s-fa-iot-pool:before { content: "\EA15" }
+.s-fa-iot-power-button:before { content: "\EA16" }
+.s-fa-iot-power:before { content: "\EA17" }
+.s-fa-iot-recycling:before { content: "\EA18" }
+.s-fa-iot-remote-control:before { content: "\EA19" }
+.s-fa-iot-ring:before { content: "\EA1A" }
+.s-fa-iot-router:before { content: "\EA1B" }
+.s-fa-iot-smartphone:before { content: "\EA1C" }
+.s-fa-iot-socket-f:before { content: "\EA1D" }
+.s-fa-iot-socket-g:before { content: "\EA1E" }
+.s-fa-iot-socket-i:before { content: "\EA1F" }
+.s-fa-iot-solar-panel:before { content: "\EA20" }
+.s-fa-iot-sun:before { content: "\EA21" }
+.s-fa-iot-sweet:before { content: "\EA22" }
+.s-fa-iot-temperature:before { content: "\EA23" }
+.s-fa-iot-thermostat:before { content: "\EA24" }
+.s-fa-iot-tv:before { content: "\EA25" }
+.s-fa-iot-ventilation:before { content: "\EA26" }
+.s-fa-iot-washer:before { content: "\EA27" }
+.s-fa-iot-weather:before { content: "\EA28" }
