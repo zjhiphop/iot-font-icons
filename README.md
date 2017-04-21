@@ -1,4 +1,4 @@
-cloudtea-iot-fonticon
+IOT Font ICONS
 =====================
 
 ```
