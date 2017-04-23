@@ -19,10 +19,20 @@ const skethcFileName = 'assets/sketch/smart-house-icon-set.sketch' // or 'symbol
  */
 const timestamp = Math.round(Date.now() / 1000)
 
-gulp.task('svg', ()=> {
+gulp.task('svg-slice', ()=> {
   gulp.src(skethcFileName)
     .pipe(sketch({
       export: 'slices',
+      formats: 'svg'
+    }))
+    .pipe(gulp.dest('./assets/svg/'));
+});
+
+
+gulp.task('svg-artboard', ()=> {
+  gulp.src(skethcFileName)
+    .pipe(sketch({
+      export: 'artboards',
       formats: 'svg'
     }))
     .pipe(gulp.dest('./assets/svg/'));

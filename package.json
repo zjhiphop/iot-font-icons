@@ -1,6 +1,6 @@
 {
   "name": "iot-font-icons",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/zjhiphop/iot-font-icons",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "fa2json": "node build/fa2json.js",
     "prepublish": "npm run icons && npm run build && cp -r ./src/* . && rm index.js",
     "publish": "rm -rf ./components && rm -rf ./icons",
-    "generate": "gulp svg; npm run prepublish;"
+    "generate": "gulp svg-artboard; npm run prepublish;"
   },
   "keywords": [
     "symbol font",
@@ -26,7 +26,6 @@
     "sketch",
     "template"
   ],
-  "private": true,
   "author": "zjhiphop <zjhiphop@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
@@ -53,9 +52,7 @@
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2",
     "webpack-merge": "^0.14.1",
-    "vue": "^2.2.6"
-  },
-  "dependencies": {
+    "vue": "^2.2.6",
     "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony"
   }
 }
