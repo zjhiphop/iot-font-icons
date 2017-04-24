@@ -22,10 +22,22 @@ npm run prepublish
 ```
 
 ### Customize
+
+#### Generate Web Fonts
+
 * add your own sketch file to `assets\sketch`
-* make slice of every svg icon
-* run `gulp slice-symbols;` to generate web fonts 
-* or run `npm run prepublish` to generate vue components 
+* make slice of every svg icon in one artboard  
+	```
+	run `gulp slice-symbols;` to generate web fonts
+	```
+* OR one artboard for one svg
+	```
+	run `gulp symbols;` to generate web fonts
+	```
+
+#### Generate Vue Components
+* Follow the setps of `Generate Web Fonts`
+* Run `npm run build` to generate vue components 
 
 
 ### TODO
