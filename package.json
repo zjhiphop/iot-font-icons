@@ -1,6 +1,6 @@
 {
   "name": "iot-font-icons",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/zjhiphop/iot-font-icons",
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
     "icons": "node build/fa2json.js && node build/icons.js",
     "fa2json": "node build/fa2json.js",
     "publish": "rm -rf ./components && rm -rf ./icons",
+    "prepublish": "gulp svg-artboard; npm run icons && npm run build",
     "generate-art": "gulp svg-artboard",
     "generate-slice": "gulp svg-slice"
   },
